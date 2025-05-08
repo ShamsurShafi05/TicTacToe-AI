@@ -3,6 +3,6 @@ from TicTacToeAgent import Player, Actions, Result, Winner, Terminal, Utility, M
 from Game import Game
 from time import sleep
 
-game = Game(4)
+game = Game()
 game.play()
 

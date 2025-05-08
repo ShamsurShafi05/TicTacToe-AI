@@ -1,5 +1,5 @@
 from Board import GenerateBoard
-from ConnectFourAgent import Player, Actions, Result, Winner, Terminal, Utility, Minimax
+from TicTacToeAgent import Player, Actions, Result, Winner, Terminal, Utility, Minimax
 from time import sleep
 import random
 
@@ -30,11 +30,12 @@ class Game:
             self.state.print_board()
             if Terminal(self.state):
                 print("Game Over!")
-                winner = Winner(self.state)
-                if winner is None:
+                winner_state = Winner(self.state)
+                if winner_state is None:
                     print("It's a draw!")
                 else:       
-                    print(f"Player {winner} wins!")
+                    winner = "AI" if winner_state == "X" else "Player"
+                    print(f"{winner} wins!")
                 break
             if self.state.player == 1:
                 print("AI's turn!")
